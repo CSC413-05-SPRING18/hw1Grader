@@ -43,14 +43,14 @@ data.users.forEach(user => {
 
 data.posts.forEach(post => {
 	tests.push({
-		endpoint : url + '/post?postid=' + post.postid,
+		endpoint : url + '/posts?postid=' + post.postid,
 		expected: buildResponse([post]),
 	});
 });
 
 data.posts.forEach(post => {
 	tests.push({
-		endpoint : url + '/post?userid=' + post.userid,
+		endpoint : url + '/posts?userid=' + post.userid,
 		expected: buildResponse([post]),
 	});
 });
