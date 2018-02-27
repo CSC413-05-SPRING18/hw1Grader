@@ -15,7 +15,7 @@ const buildResponse = (data) => {
 const testEndpoint = (endpoint, expected) => {
 	return new Promise((resolve, reject) => {
 		axios.get(endpoint)
-		.then(function(response) {	
+		.then((response) => {	
 			if(_.isEqual(response.data, expected)){
 				resolve();
 			}else{
