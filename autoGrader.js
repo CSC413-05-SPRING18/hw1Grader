@@ -23,7 +23,6 @@ const testEndpoint = (endpoint, expected) => {
 			}
 			resolve();
 		}).catch((err) =>{
-			console.log(err);
 			reject();
 		})
 	});
