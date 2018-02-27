@@ -2,12 +2,13 @@ const axios = require('axios');
 const async = require('async');
 const data = require('./data.json');
 const url = 'http://localhost:1299';
+const _ = require('lodash');
 
 const buildResponse = (data) => {
 	return {
 		status : 'OK',
-		data : data,
 		entries: data.length,
+		data : data,
 	}
 }
 
@@ -15,7 +16,7 @@ const testEndpoint = (endpoint, expected) => {
 	return new Promise((resolve, reject) => {
 		axios.get(endpoint)
 		.then(function(response) {	
-			if(JSON.stringify(response.data) === JSON.stringify(expected)){
+			if(_.isEqual(response.data, expected)){
 				resolve();
 			}else{
 				reject();
